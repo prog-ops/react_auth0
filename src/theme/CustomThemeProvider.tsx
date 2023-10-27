@@ -1,12 +1,12 @@
 import {PropsWithChildren} from "react";
 import {useAppSelector} from "../store/hooks";
-import {createMuiTheme, ThemeProvider} from "@mui/material";
+import {createTheme, ThemeProvider} from "@mui/material/styles";
 import {appColors, darkModeColors} from "./colors";
 
 const CustomThemeProvider = (props: PropsWithChildren<{}>) => {
   const darkMode = useAppSelector((state) => state.darkMode)
 
-  const theme = createMuiTheme({
+  const theme = createTheme({
     palette: {
       mode: darkMode ? "dark" : "light", // (type)
       primary: {
@@ -23,7 +23,7 @@ const CustomThemeProvider = (props: PropsWithChildren<{}>) => {
 }
 export default CustomThemeProvider
 
-declare module '@mui/material/' {
+declare module '@mui/material/styles/createTheme' {
   interface Theme {
     background: string
     font: string
