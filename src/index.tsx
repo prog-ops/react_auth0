@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from "react-router-dom";
 import AuthProvider from "./auth/AuthProvider";
 import ReduxProvider from "./store/ReduxProvider";
+import CustomThemeProvider from "./theme/CustomThemeProvider";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,7 +16,7 @@ root.render(
     <ReduxProvider>
       <Router>
         <AuthProvider>
-          <App />
+          <CustomThemeProvider><App /></CustomThemeProvider>
         </AuthProvider>
       </Router>
     </ReduxProvider>
