@@ -7,7 +7,7 @@ import {useAuth0} from "@auth0/auth0-react";
 import Loading from "../components/common/Loading";
 import {Redirect} from "react-router-dom";
 
-const Routes = () => {
+const AppRoutes = () => {
   // const classes = useStyles()
 
   const { isAuthenticated, isLoading} = useAuth0()
@@ -51,6 +51,9 @@ const Routes = () => {
 
 const theme = createTheme();
 
+/*! MUI: makeStyles is no longer exported from @mui/material/styles.
+You have to import it from @mui/styles.
+See https://mui.com/r/migration-v4/#mui-material-styles for more details.
 const useStyles = makeStyles((theme: Theme) => ({
   main: {
     height: '100%',
@@ -61,6 +64,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: '100%',
     color: theme.palette.primary,
   }
-}))
+}))*/
 
-export default Routes
+export default AppRoutes
