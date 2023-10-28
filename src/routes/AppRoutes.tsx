@@ -4,8 +4,9 @@ import {ThemeProvider} from "@mui/material/styles";
 import ProtectedRoute from "../auth/ProtectedRoute";
 import routes from "./routes";
 import {useAuth0} from "@auth0/auth0-react";
-import Loading from "../components/common/Loading";
+import Loading from "../components/common/Loading/Loading";
 import {Redirect} from "react-router-dom";
+import Header from "../components/common/Header/Header";
 
 const AppRoutes = () => {
   // const classes = useStyles()
@@ -19,7 +20,7 @@ const AppRoutes = () => {
   return (
       <ThemeProvider theme={theme}>
         <div>
-          <div>Header</div>
+          <Header/>
           <div>
             <Switch>
               <ProtectedRoute
