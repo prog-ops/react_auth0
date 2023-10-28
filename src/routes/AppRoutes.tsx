@@ -7,6 +7,7 @@ import {useAuth0} from "@auth0/auth0-react";
 import Loading from "../components/common/Loading/Loading";
 import {Redirect} from "react-router-dom";
 import Header from "../components/common/Header/Header";
+import Home from "../pages/Home/Home";
 
 const AppRoutes = () => {
   // const classes = useStyles()
@@ -26,11 +27,12 @@ const AppRoutes = () => {
           <div>
             <Switch>
               <ProtectedRoute exact path={routes.codeEditor}>
-                asfdsfds
+                {/*{CodeEditor}*/}
+                adasf
               {/*  masih bermasalah disini, harusnya disini {CodeEditor} */}
               </ProtectedRoute>
               <Route exact path={routes.home}>
-                {isAuthenticated ? <Redirect to={routes.codeEditor} /> : <div>Home</div>}
+                {isAuthenticated ? <Redirect to={routes.codeEditor} /> : <Home/>}
               </Route>
             </Switch>
           </div>
