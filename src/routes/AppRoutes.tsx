@@ -17,6 +17,8 @@ const AppRoutes = () => {
     return <Loading/>
   }
 
+  const CodeEditor = () => <div>Code Editor App</div>
+
   return (
       <ThemeProvider theme={theme}>
         <div>
@@ -25,8 +27,9 @@ const AppRoutes = () => {
             <Switch>
               <ProtectedRoute
                   exact
-                  path={routes.codeEditor} component={<div>Code Editor</div>}
-              />
+                  path={routes.codeEditor}>
+                asfdsfds
+              </ProtectedRoute>
               <Route exact path={routes.home}>
                 {isAuthenticated ? <Redirect to={routes.codeEditor} /> : <div>Home</div>}
               </Route>
