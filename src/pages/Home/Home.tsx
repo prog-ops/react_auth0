@@ -6,7 +6,7 @@ const Home = () => {
   return (//div not Box
       <Box sx={styles.root}>
         <div style={styles.welcomeMessage}>
-          Welcome
+          Welcome to Code Editor App
         </div>
         <ProgrammingList/>
       </Box>
