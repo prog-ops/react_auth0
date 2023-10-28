@@ -14,7 +14,7 @@ const SignOut = () => {
 
   return (
       <Button onClick={onLogOut}>
-        Sign In
+        Sign Out
       </Button>
   )
 }
