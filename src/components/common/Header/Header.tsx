@@ -3,6 +3,8 @@ import {useAppDispatch, useAppSelector} from "../../../store/hooks";
 import {toggleDarkMode} from "../../../store/dark-mode/reducer";
 import {AppBar, ToggleButton, Switch, Toolbar, Typography} from "@mui/material";
 import {Check, CheckOutlined, Circle, CircleTwoTone, DarkModeRounded} from "@mui/icons-material";
+import UnauthenticatedButton from "./UnauthenticatedButton";
+import AuthenticatedButton from "./AuthenticatedButton";
 
 const Header =  () => {
   const { isAuthenticated } = useAuth0()
@@ -28,8 +30,8 @@ const Header =  () => {
               icon={<Circle/>}
           />
           {isAuthenticated
-              ? <div>Authenticated buttons</div>
-              : <div>Unauthenticated buttons</div>
+              ? <AuthenticatedButton/>
+              : <UnauthenticatedButton/>
           }
         </Toolbar>
       </AppBar>
