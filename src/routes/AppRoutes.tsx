@@ -25,10 +25,9 @@ const AppRoutes = () => {
           <Header/>
           <div>
             <Switch>
-              <ProtectedRoute
-                  exact
-                  path={routes.codeEditor}>
+              <ProtectedRoute exact path={routes.codeEditor}>
                 asfdsfds
+              {/*  masih bermasalah disini, harusnya disini {CodeEditor} */}
               </ProtectedRoute>
               <Route exact path={routes.home}>
                 {isAuthenticated ? <Redirect to={routes.codeEditor} /> : <div>Home</div>}
