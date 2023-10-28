@@ -38,6 +38,7 @@ const AppRoutes = () => {
       </ThemeProvider>
   );
 
+  // if with makeStyles
   // return (
   //     <ThemeProvider theme={theme}>
   //       <div className={classes.main}>
