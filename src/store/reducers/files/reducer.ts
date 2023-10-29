@@ -1,13 +1,13 @@
 import UserFile from "../../../types/UserFile";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-export interface FileState {
+export interface FilesState {
   userFiles: UserFile[]
   activeFiles: string[]
   editorActiveFile: string | null
 }
 
-export const initialState: FileState = {
+export const initialState: FilesState = {
   userFiles: [],
   activeFiles: [],
   editorActiveFile: null
