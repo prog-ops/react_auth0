@@ -27,8 +27,8 @@ const fileSlice = createSlice({
     removeActiveFile(state, action: PayloadAction<string>) {
       state.activeFiles = state.activeFiles.filter(fileId => fileId !== action.payload)
     },
-    updateFileCode(state, action: PayloadAction<{fileId: string; newCode: string}>) {
-      const { fileId, newCode } = action.payload
+    updateFileCode(state, action: PayloadAction<{ fileId: string; newCode: string }>) {
+      const {fileId, newCode} = action.payload
       const userFiles = state.userFiles
       let userFile = userFiles.find(file => file.id === fileId)
       if (userFile) {
@@ -41,5 +41,12 @@ const fileSlice = createSlice({
   }
 })
 
+export const {
+  setFiles,
+  addActiveFile,
+  removeActiveFile,
+  updateFileCode,
+  setEditorActiveFile
+} = fileSlice.actions
 const filesReducer = fileSlice.reducer
 export default filesReducer
