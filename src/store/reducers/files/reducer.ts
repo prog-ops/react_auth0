@@ -1,4 +1,4 @@
-import UserFile from "../../types/UserFile";
+import UserFile from "../../../types/UserFile";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 export interface FileState {

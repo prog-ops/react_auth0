@@ -1,6 +1,6 @@
 import {useAuth0} from "@auth0/auth0-react";
 import {useAppDispatch, useAppSelector} from "../../../store/hooks";
-import {toggleDarkMode} from "../../../store/dark-mode/reducer";
+import {toggleDarkMode} from "../../../store/reducers/dark-mode/reducer";
 import {AppBar, ToggleButton, Switch, Toolbar, Typography} from "@mui/material";
 import {Check, CheckOutlined, Circle, CircleTwoTone, DarkModeRounded} from "@mui/icons-material";
 import UnauthenticatedButton from "./UnauthenticatedButton";
