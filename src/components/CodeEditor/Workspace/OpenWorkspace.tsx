@@ -10,7 +10,9 @@ const OpenWorkspace = () => {
   }
 
   const onFilesUpload = () => {
-    console.log('test')
+    console.log('test') // v
+    const files = directoryInputRef.current?.files as FileList // v hasil1
+    console.log(files)
   }
 
   return (
@@ -36,3 +38,27 @@ declare module 'react' {
 }
 
 export default OpenWorkspace
+
+/*
+hasil1
+FileList {0: File, 1: File, length: 2}
+0: File
+lastModified: 1537715493920
+lastModifiedDate: Sun Sep 23 2018 22:11:33 GMT+0700 (Western Indonesia Time) {}
+name: "FormBorderLayout.form"
+size: 1143
+type: ""
+webkitRelativePath: "views/FormBorderLayout.form"
+[[Prototype]]: File
+1: File
+lastModified: 1537715493804
+lastModifiedDate: Sun Sep 23 2018 22:11:33 GMT+0700 (Western Indonesia Time) {}
+name: "FormBorderLayout.java"
+size: 1080
+type: ""
+webkitRelativePath: "views/FormBorderLayout.java"
+[[Prototype]]: File
+length: 2
+
+
+ */
