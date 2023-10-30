@@ -1,19 +1,32 @@
 import {Button} from "@mui/material";
 import {commonColors} from "../../../theme/colors";
 import {AriaAttributes, DOMAttributes, useRef} from "react";
+import {useAppDispatch} from "../../../store/hooks";
+import readManyFiles from "../../../store/thunks/readFiles";
 
 const OpenWorkspace = () => {
   const directoryInputRef = useRef<HTMLInputElement>(null)
+  const dispatch = useAppDispatch()
 
   const onClick = () => {
     directoryInputRef.current?.click()
   }
 
-  const onFilesUpload = () => {
+  const onFilesUpload = async () => {
+    try {
+      const files = directoryInputRef.current?.files as FileList
+      await dispatch(readManyFiles(files))
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  // This works (only logging file list) before using async thunk
+  /*const onFilesUpload = () => {
     console.log('test') // v
     const files = directoryInputRef.current?.files as FileList // v hasil1
     console.log(files)
-  }
+  }*/
 
   return (
       <div>
