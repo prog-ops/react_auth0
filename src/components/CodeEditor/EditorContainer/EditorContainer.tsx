@@ -4,6 +4,7 @@ import {ChangeEvent} from "react";
 import {AppBar, Tab, Tabs} from "@mui/material";
 import {CustomTabPanel} from "./CustomTabPanel";
 import {setEditorActiveFile} from "../../../store/reducers/files/reducer";
+import {CustomTabLabel} from "./CustomTabLabel";
 
 export const EditorContainer = () => {
   const activeFiles = useAppSelector(selectActiveFiles);
@@ -35,7 +36,10 @@ export const EditorContainer = () => {
               onChange={onTabClick}
           >
             {activeFiles.map(activeFile => {
-              return <Tab key={activeFile.id} label='foo'/>
+              return <Tab
+                  key={activeFile.id}
+                  label={<CustomTabLabel activeFile={activeFile}/>}
+              />
             })}
           </Tabs>
         </AppBar>

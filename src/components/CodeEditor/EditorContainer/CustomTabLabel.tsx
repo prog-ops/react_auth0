@@ -3,15 +3,19 @@ import {createTheme} from "@mui/material";
 import {ExtensionIcon} from "../ExtensionIcon/ExtensionIcon";
 import {Close} from "@mui/icons-material";
 import { MouseEvent } from 'react'
+import {useAppDispatch} from "../../../store/hooks";
+import {closeFile} from "../../../store/thunks/closeFile/closeFile";
 
 interface Props {
   activeFile: UserFile
 }
 
 export const CustomTabLabel = (props: Props) => {
-  const  { activeFile: { id, name: fileName, extension } } = props
+  const dispatch = useAppDispatch()
+  const  { activeFile: { id: fileId, name: fileName, extension } } = props
   const onClose = (event: MouseEvent) => {
     event.stopPropagation()
+    dispatch(closeFile(fileId))
   }
 
   return (
@@ -25,20 +29,23 @@ export const CustomTabLabel = (props: Props) => {
   )
 }
 
+type Position = 'static' | 'relative' | 'absolute' | 'fixed';
+type TextTransform = 'none' | 'capitalize' | 'uppercase' | 'lowercase';
+
 const theme = createTheme()
 const style = {
   root: {
     display: 'flex',
     alignItems: "center",
     justifyContent: "center",
-    // textTransform: 'none'
+    textTransform: 'none' as TextTransform
   },
   fileName: {
     padding: '0px 5px',
     color: theme.font
   },
   closeIcon: {
-    // position: 'absolute',
+    position: 'absolute' as Position,
     right: 0,
     color: theme.font
   }
