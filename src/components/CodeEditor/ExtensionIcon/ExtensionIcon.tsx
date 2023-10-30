@@ -1,8 +1,8 @@
-import { ReactComponent as JavascriptIcon } from "../../assets/images/JavaScript.svg";
-import { ReactComponent as PythonIcon } from "../../assets/images/Python.svg";
-import { ReactComponent as KotlinIcon } from "../../assets/images/Kotlin.svg";
-import { ReactComponent as JavaIcon } from "../../assets/images/Java.svg";
-import { ReactComponent as DefaultIcon } from "../../assets/images/materialui.svg";
+import { ReactComponent as JavascriptIcon } from "../../../assets/images/JavaScript.svg";
+import { ReactComponent as PythonIcon } from "../../../assets/images/Python.svg";
+import { ReactComponent as KotlinIcon } from "../../../assets/images/Kotlin.svg";
+import { ReactComponent as JavaIcon } from "../../../assets/images/Java.svg";
+import { ReactComponent as DefaultIcon } from "../../../assets/images/materialui.svg";
 
 interface Props {
   extension?: string
