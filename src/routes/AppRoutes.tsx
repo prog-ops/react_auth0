@@ -8,6 +8,7 @@ import Loading from "../components/common/Loading/Loading";
 import {Redirect} from "react-router-dom";
 import Header from "../components/common/Header/Header";
 import Home from "../pages/Home/Home";
+import {CodeEditor} from "../pages/CodeEditor/CodeEditor";
 
 const AppRoutes = () => {
   // const classes = useStyles()
@@ -18,7 +19,7 @@ const AppRoutes = () => {
     return <Loading/>
   }
 
-  const CodeEditor = () => <div>Code Editor App</div>
+  // const CodeEditor = () => <div>Code Editor App</div>
 
   return (
       <ThemeProvider theme={theme}>
@@ -29,7 +30,7 @@ const AppRoutes = () => {
               <ProtectedRoute
                   exact
                   path={routes.codeEditor}
-                  component={CodeEditor} // solusi, nambah sendiri
+                  component={CodeEditor} // solusi, nambah sendiri prop component
               >
                 {/*{CodeEditor} aslinya, tapi error:
                 ! Element type is invalid: expected a string (for built-in components) or a class/function (for
