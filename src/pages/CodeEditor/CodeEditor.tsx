@@ -1,5 +1,6 @@
 import {createTheme} from "@mui/material";
 import {FileViewer} from "../../components/CodeEditor/FileViewer/FileViewer";
+import {EditorContainer} from "../../components/CodeEditor/EditorContainer/EditorContainer";
 
 export const CodeEditor = () => {
   return(
@@ -8,7 +9,7 @@ export const CodeEditor = () => {
           <FileViewer/>
         </div>
         <div style={style.codeEditorContainer}>
-          Editor Container
+          <EditorContainer/>
         </div>
       </div>
   )
