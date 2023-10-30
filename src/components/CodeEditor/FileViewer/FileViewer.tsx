@@ -1,15 +1,18 @@
 import {createTheme} from "@mui/material";
-import {useAppSelector} from "../../../store/hooks";
+import {useAppDispatch, useAppSelector} from "../../../store/hooks";
 import selectFileViewerData from "../../../store/selectors/selectFileViewerData/selectFileViewerData";
 import FileViewerStructure from "../../../types/FileViewerStructure";
 import {TreeItem, TreeView} from "@mui/x-tree-view";
 import {ExtensionIcon} from "../ExtensionIcon/ExtensionIcon";
 import {Folder, FolderOpen} from "@mui/icons-material";
+import openFile from "../../../store/thunks/openFile/openFile";
 
 export const FileViewer = () => {
   const fileViewerData = useAppSelector(selectFileViewerData)
-  const onSelectNode = (node: FileViewerStructure) => {
 
+  const dispatch = useAppDispatch()
+  const onSelectNode = (node: FileViewerStructure) => {
+    dispatch(openFile(node))
   }
 
   const renderTree = (node: FileViewerStructure) => {
