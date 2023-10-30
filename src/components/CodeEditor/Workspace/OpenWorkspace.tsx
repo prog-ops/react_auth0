@@ -2,7 +2,7 @@ import {Button} from "@mui/material";
 import {commonColors} from "../../../theme/colors";
 import {AriaAttributes, DOMAttributes, useRef} from "react";
 import {useAppDispatch} from "../../../store/hooks";
-import readManyFiles from "../../../store/thunks/readFiles";
+import readManyFiles from "../../../store/thunks/readFiles/readFiles";
 
 const OpenWorkspace = () => {
   const directoryInputRef = useRef<HTMLInputElement>(null)
