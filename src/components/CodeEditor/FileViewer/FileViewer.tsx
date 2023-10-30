@@ -8,18 +8,23 @@ import {Folder, FolderOpen} from "@mui/icons-material";
 
 export const FileViewer = () => {
   const fileViewerData = useAppSelector(selectFileViewerData)
-  const renderTree = (nodes: FileViewerStructure) => {
-    const { id: nodeId, name: nodeName, extension } = nodes
+  const onSelectNode = (node: FileViewerStructure) => {
+
+  }
+
+  const renderTree = (node: FileViewerStructure) => {
+    const { id: nodeId, name: nodeName, extension } = node
     return (
         <TreeItem
             style={style.treeItem}
             key={nodeId}
             nodeId={nodeId}
             label={nodeName}
+            onDoubleClick={() => onSelectNode(node)}
             endIcon={<ExtensionIcon extension={extension} />}
         >
-          {Array.isArray(nodes.children)
-              ? nodes.children.map(node => renderTree(node))
+          {Array.isArray(node.children)
+              ? node.children.map(n => renderTree(n))
               : null
           }
         </TreeItem>
