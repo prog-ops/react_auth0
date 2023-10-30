@@ -1,20 +1,26 @@
-import {useAppSelector} from "../../../store/hooks";
+import {useAppDispatch, useAppSelector} from "../../../store/hooks";
 import selectActiveFiles from "../../../store/selectors/selectActiveFiles/selectActiveFiles";
 import {ChangeEvent} from "react";
 import {AppBar, Tab, Tabs} from "@mui/material";
 import {CustomTabPanel} from "./CustomTabPanel";
+import {setEditorActiveFile} from "../../../store/reducers/files/reducer";
 
 export const EditorContainer = () => {
   const activeFiles = useAppSelector(selectActiveFiles);
   const editorActiveFile = useAppSelector(state => state.files.editorActiveFile)
   const activeFilesIds = useAppSelector(state => state.files.activeFiles)
+  const dispatch = useAppDispatch()
 
   if (!activeFiles.length) {
-    return <div style={{}}>Select a file</div>
+    return <div style={{/*emptyMessage*/}}>Select a file</div>
   }
 
   const onTabClick = (event: ChangeEvent<{}>, tabPosition: number) => {
-    console.log('foo')
+    const activeFileId = activeFilesIds[tabPosition]
+    if (activeFileId !== editorActiveFile) {
+      dispatch(setEditorActiveFile(activeFileId))
+    }
+    console.log('foo');
   }
 
   return (
