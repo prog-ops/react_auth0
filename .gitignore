@@ -1,26 +1,119 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ============================================
+# .gitignore untuk proyek react_auth0
+# Stack: Create React App + Auth0 React SDK
+# ============================================
 
-# dependencies
+# ---------- Dependensi ----------
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
+# ---------- Output Build CRA ----------
+/build
 /coverage
 
-# production
-/build
-
-# misc
-.DS_Store
+# ---------- Environment Variables (KRITIS) ----------
+# File .env berisi kredensial Auth0 (Client ID & Domain).
+# JANGAN pernah commit file ini. Gunakan .env.example sebagai template.
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env.*.local
 
+# ---------- Kredensial & Secret Tambahan ----------
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.mobileprovision
+google-services.json
+GoogleService-Info.plist
+
+# ---------- Cache & File Sementara ----------
+.cache/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+.npm
+.node_repl_history
+.jest-cache/
+.temp/
+.tmp/
+*.bak
+*.old
+
+# ---------- Testing ----------
+/coverage
+.nyc_output/
+junit.xml
+test-results/
+cypress/videos/
+cypress/screenshots/
+playwright-report/
+
+# ---------- Logs ----------
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# ADD .env HERE
-.env
+# ---------- Deployment ----------
+.vercel
+.netlify
+.gh-pages/
+
+# ---------- File IDE / Editor ----------
+# VS Code (simpan konfigurasi yang biasanya dibagikan)
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+*.code-workspace
+
+# JetBrains (WebStorm / IntelliJ)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim / Emacs
+*.swp
+*.swo
+*~
+\#*\#
+.\#*
+
+# ---------- File OS ----------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+# Linux
+.directory
+.Trash-*
+
+# ---------- Lockfile Manajer Paket Lain ----------
+# Proyek ini menggunakan npm. Commit package-lock.json.
+# Abaikan lockfile manajer lain agar tidak terjadi konflik.
+yarn.lock
+pnpm-lock.yaml
+bun.lock
+bun.lockb
+
+# ---------- Misc ----------
+.misc
+.DS_Store?
